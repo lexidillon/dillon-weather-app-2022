@@ -2,6 +2,15 @@ body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/049/476/original/worldmaptransparent.jpg?1666289324);
   background-size: 100%;
 }
+
+footer {
+  background-color: white;
+  opacity: 0.8;
+  margin: 20px;
+  width: 180px;
+  padding: 10px;
+}
+
 h1,
 h2,
 .app-tagline,
@@ -10,6 +19,7 @@ h2,
 .middle-days {
   font-family: "New Tegomin", serif;
 }
+
 h1 {
   text-align: center;
   padding: 10px;
@@ -17,6 +27,7 @@ h1 {
   color: white;
   -webkit-text-stroke: 1.5px black;
 }
+
 h2 {
   text-transform: capitalize;
 }
@@ -56,10 +67,6 @@ ul {
 }
 .degree-symbols .active:hover {
   text-decoration: none;
-}
-
-.github-link {
-  color: white;
 }
 
 #hourly-forecast {
