@@ -36,6 +36,11 @@ ul {
   margin: 0 auto;
 }
 
+.btn-primary {
+  background-color: #749a8e !important;
+  border-color: #749a8e;
+}
+
 .current-information {
   margin-left: 20px;
   text-transform: capitalize;
