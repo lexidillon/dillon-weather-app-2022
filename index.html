@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi's Weather Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Island+Moments&family=New+Tegomin&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="assets/weather.png" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/8fde655d6a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <i class="fa-solid fa-suitcase-rolling suitcase-icon"></i> World
+        Wanderer's Weather
+      </h1>
+      <div class="container border p-4 rounded shadow bg-white weather-box">
+        <small class="app-tagline"
+          >Check the weather of your next travel destination
+          <i class="fa-solid fa-plane"></i
+        ></small>
+        <br />
+        <div class="row">
+            <div class="col-sm-6" id="weather-form">
+              <form>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter city name"
+                id="city-input"
+                autocomplete="off"
+                autocapitalize="on"
+              />
+            </div>
+            <div class="col-sm-3">
+
+              <input
+                type="submit"
+                class="btn btn-secondary w-100"
+                value="🔍 Search City"
+              />
+            </div>
+          </form>
+          <div class="col-sm-3">
+            <button type="click" class="btn btn-primary w-100" id="current-city-button">
+              📍 Current City
+            </button>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-6">
+            <div class="current-information">
+              <h2 id="city-name">Virginia Beach</h2>
+              <p>Day, Month Date, Year</p>
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="current-temperature">
+                    <li id="main-temperature"></li>
+                    <li id="weather-status">Sunny</li>
+                  </ul>
+                </div>
+                <div class="degree-symbols col-sm-3 f-degree">
+                  <a href="#" id="fahrenheit-link" class="active">°F</a>
+                </div>
+                <div class="degree-symbols col-sm-3 c-degree">
+                  <a href="#" id="celsius-link">| °C</a>
+                </div>
+                <div class="col-sm-2 icon">
+                  <img
+                    src="http://openweathermap.org/img/wn/01d@2x.png"
+                    alt="Current Weather"
+                    id="icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="measurements col-sm-6">
+            <i class="fa-solid fa-wind"></i> <strong>Wind:</strong>
+            <span id="wind"></span>km/h<br />
+            <i class="fa-solid fa-temperature-half"></i>
+            <strong>Humidity:</strong> <span id="humidity"></span>%
+          </div>
+        </div>
+        <div class="six-hour row" id="hourly-forecast">
+          <div class="middle-days col-2">
+            01:00 <br />
+            <i class="fa-solid fa-cloud"></i> <br />
+            68°/ 31°
+          </div>
+          <div class="middle-days col-2">
+            02:00 <br />
+            <i class="fa-solid fa-sun"></i><br />
+            68°/ 41°
+          </div>
+          <div class="middle-days col-2">
+            03:00 <br />
+            <i class="fa-solid fa-cloud-bolt"></i><br />
+            58°/ 41°
+          </div>
+          <div class="middle-days col-2">
+            04:00 <br />
+            <i class="fa-solid fa-cloud-rain"></i><br />
+            58°/ 51°
+          </div>
+          <div class="middle-days col-2">
+            05:00 <br />
+            <i class="fa-solid fa-cloud-sun"></i><br />
+            68°/ 41°
+          </div>
+          <div class="middle-days col-2">
+            06:00 <br />
+            <i class="fa-solid fa-sun"></i><br />
+            58°/ 31°
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
