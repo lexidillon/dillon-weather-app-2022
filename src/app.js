@@ -63,6 +63,12 @@ function displayCurrentWeather(response) {
   document.querySelector("#main-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#weather-status").innerHTML =
+    response.data.weather[0].main;
 }
 
 function searchCity(city) {
