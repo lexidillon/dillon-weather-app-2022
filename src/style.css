@@ -5,7 +5,7 @@ body {
 
 footer {
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.7;
   margin: 20px;
   width: 180px;
   padding: 10px;
@@ -61,10 +61,12 @@ ul {
   position: relative;
   margin-right: 0px;
 }
+
 .degree-symbols .active {
   color: black;
-  cursor: default;
+  cursor: pointer;
 }
+
 .degree-symbols .active:hover {
   text-decoration: none;
 }
@@ -93,11 +95,10 @@ ul {
 }
 
 .weather-box {
-  border: 2px solid;
   display: block;
   margin: 0 auto;
   opacity: 0.8;
-  width: 700px;
+  max-width: 700px;
   margin-top: 20px;
   margin-bottom: 40px;
 }
