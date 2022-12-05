@@ -57,7 +57,6 @@ function formatHours(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-// answer from Matt
 function displayCurrentWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#main-temperature").innerHTML = Math.round(
@@ -69,6 +68,11 @@ function displayCurrentWeather(response) {
   );
   document.querySelector("#weather-status").innerHTML =
     response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(city) {
