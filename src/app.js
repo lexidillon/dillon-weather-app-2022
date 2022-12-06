@@ -59,9 +59,9 @@ function formatHours(timestamp) {
 
 function displayCurrentWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#main-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  fahrenheitTemp = response.data.main.temp;
+  document.querySelector("#main-temperature").innerHTML =
+    Math.round(fahrenheitTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -90,8 +90,6 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#weather-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-searchCity("Virginia Beach");
-
 function getCurrentWeather(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
@@ -109,3 +107,31 @@ function showLocation(position) {
 
 let currentCity = document.querySelector("#current-city-button");
 currentCity.addEventListener("click", getCurrentWeather);
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+  let temperature = document.querySelector("#main-temperature");
+  temperature.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#main-temperature");
+  fahrenheitLink.classList.remove("inactive");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.add("inactive");
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let fahrenheitTemp = null;
+
+searchCity("Virginia Beach");

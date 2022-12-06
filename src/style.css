@@ -62,9 +62,14 @@ ul {
   margin-right: 0px;
 }
 
-.degree-symbols .active {
+.degree-symbols .inactive {
+  text-decoration: none;
   color: black;
+}
+
+.degree-symbols .active {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .degree-symbols .active:hover {
