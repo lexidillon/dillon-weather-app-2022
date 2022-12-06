@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/049/476/original/worldmaptransparent.jpg?1666289324);
   background-size: 100%;
@@ -62,14 +66,10 @@ ul {
   margin-right: 0px;
 }
 
-.degree-symbols .inactive {
-  text-decoration: none;
-  color: black;
-}
-
 .degree-symbols .active {
-  cursor: pointer;
-  text-decoration: underline;
+  color: black;
+  cursor: default;
+  text-decoration: none;
 }
 
 .degree-symbols .active:hover {

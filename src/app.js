@@ -114,6 +114,7 @@ function displayCelsius(event) {
   let temperature = document.querySelector("#main-temperature");
   temperature.innerHTML = Math.round(celsiusTemp);
   celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let celsiusLink = document.querySelector("#celsius-link");
@@ -122,10 +123,8 @@ celsiusLink.addEventListener("click", displayCelsius);
 function displayFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#main-temperature");
-  fahrenheitLink.classList.remove("inactive");
-  celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  celsiusLink.classList.add("inactive");
+  celsiusLink.classList.remove("active");
   temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
