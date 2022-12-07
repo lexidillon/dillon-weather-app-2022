@@ -75,10 +75,39 @@ function displayCurrentWeather(response) {
   );
 }
 
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tues"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="forecast-days">${day}</div>
+       <i class="fa-solid fa-cloud"></i> <br />
+        <div class="weather-forecast-temperatures">
+        <span class="forecast-temps">
+          <span class="forecast-max-temp">68°</span> / 31°
+          </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+showForecast();
+
 function searchCity(city) {
   let apiKey = "ed55b36e362d8733f7d859247cedeaf2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayCurrentWeather);
+
+  //  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+  //  axios.get(apiUrl).then(showForecast);
 }
 
 function handleSubmit(event) {
