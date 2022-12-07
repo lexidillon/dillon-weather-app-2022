@@ -20,7 +20,8 @@ h2,
 .app-tagline,
 .current-information,
 .measurements,
-.middle-days {
+.forecast-days,
+.forecast-temps {
   font-family: "New Tegomin", serif;
 }
 
@@ -76,14 +77,30 @@ ul {
   text-decoration: none;
 }
 
-#hourly-forecast {
+.forecast-days {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.forecast-temps {
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+}
+
+#forecast {
   text-align: center;
   background: rgba(211, 211, 211, 0.8);
-  padding: 20px 0px;
+  padding: 15px 0px;
+  margin-bottom: -10px;
 }
 
 #main-temperature {
   font-size: 60px;
+}
+
+.max-temp {
+  color: #242021;
 }
 
 .measurements {
