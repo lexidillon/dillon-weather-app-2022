@@ -82,24 +82,40 @@ function displayCurrentWeather(response) {
   getForecast(response.data.coord);
 }
 
+function getDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
 function showForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tues"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-        <div class="forecast-days">${day}</div>
-       <i class="fa-solid fa-cloud"></i> <br />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+        <div class="forecast-days">${getDay(forecastDay.dt)}</div>
+       <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        /> <br />
         <div class="weather-forecast-temperatures">
         <span class="forecast-temps">
-          <span class="forecast-max-temp">68°</span> / 31°
+          <span class="forecast-max-temp">${Math.round(
+            forecastDay.temp.max
+          )}°</span> / ${Math.round(forecastDay.temp.min)}°
           </span>
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
