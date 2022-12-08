@@ -69,7 +69,7 @@ function displayCurrentWeather(response) {
   document.querySelector("#main-temperature").innerHTML =
     Math.round(fahrenheitTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
+  document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#weather-status").innerHTML =
@@ -108,9 +108,11 @@ function showForecast(response) {
         /> <br />
         <div class="weather-forecast-temperatures">
         <span class="forecast-temps">
-          <span class="forecast-max-temp">${Math.round(
+          <span class="forecast-max-temp" id="forecast-max-temp">${Math.round(
             forecastDay.temp.max
-          )}°</span> / ${Math.round(forecastDay.temp.min)}°
+          )}°</span> / <span class="forecast-min-temp" id="forecast-min-temp">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
           </span>
         </div>
       </div>
@@ -172,6 +174,7 @@ function displayFahrenheit(event) {
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
   temperature.innerHTML = Math.round(fahrenheitTemp);
+  displayForecastFahrenheit();
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
