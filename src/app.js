@@ -70,10 +70,8 @@ function displayCurrentWeather(response) {
     Math.round(fahrenheitTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(
-    response.data.wind.speed * 0.62137
+    response.data.wind.speed
   );
-  let windUnit = document.querySelector("#wind-unit");
-  windUnit.innerHTML = "mph";
   document.querySelector("#weather-status").innerHTML =
     response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
@@ -165,10 +163,6 @@ function displayCelsius(event) {
   temperature.innerHTML = Math.round(celsiusTemp);
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  // let windUnit = document.querySelector("#wind-unit");
-  // windUnit.innerHTML = "km/h";
-  // let windSpeed = document.querySelector("#wind-speed");
-  // windSpeed.innerHTML = Math.round(response.data.wind.speed * 1.609344);
 }
 
 let celsiusLink = document.querySelector("#celsius-link");
@@ -180,10 +174,6 @@ function displayFahrenheit(event) {
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
   temperature.innerHTML = Math.round(fahrenheitTemp);
-  // let windUnit = document.querySelector("#wind-unit");
-  // windUnit.innerHTML = "mph";
-  // let windSpeed = document.querySelector("#wind-speed");
-  // windSpeed.innerHTML = Math.round(response.data.wind.speed * 0.62137);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
