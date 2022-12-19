@@ -43,29 +43,42 @@
         ></small>
         <br />
         <div class="row">
-            <div class="col-sm-6" id="weather-form">
-              <form>
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Enter city name"
-                id="city-input"
-                autocomplete="off"
-                autocapitalize="on"
-              />
-            </div>
-            <div class="col-sm-3">
-              <input
-                type="submit"
-                class="btn btn-primary w-100"
-                value="🔍 Search City"
-              />
-            </div>
-          </form>
-          <div class="col-sm-3">
-            <button type="click" class="btn btn-primary w-100" id="current-city-button">
-              📍 Current City
-            </button>
+          <div class="col-sm-12" id="weather-form">
+            <form class="row g-3">
+              <div class="col-sm-6">
+                <label for="city-input" class="visually-hidden">City</label>
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Enter city name"
+                  id="city-input"
+                  autocomplete="off"
+                  autocapitalize="on"
+                />
+              </div>
+              <div class="col-sm-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  value="Search City"
+                >
+                  <span class="btnIcon"
+                    ><i class="fa-solid fa-magnifying-glass"></i></span
+                  >Search City
+                </button>
+              </div>
+              <div class="col-sm-3">
+                <button
+                  type="click"
+                  class="btn btn-secondary w-100"
+                  id="current-city-button"
+                >
+                  <span class="btnIcon"
+                    ><i class="fa-sharp fa-solid fa-location-dot"></i></span
+                  >Current City
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <br />
@@ -83,10 +96,14 @@
                 </div>
                 <div class="col-sm-6">
                   <span class="degree-symbols">
-                    <span class="f-degree"><a href="#" id="fahrenheit-link" class="active">°F</a></span> 
-                  | 
-                  <span class="c-degree"><a href="#" id="celsius-link">°C</a></span>
-                </span>
+                    <span class="f-degree"
+                      ><a href="#" id="fahrenheit-link" class="active"
+                        >°F</a
+                      ></span
+                    >
+                    <!-- | 
+                  <span class="c-degree"><a href="#" id="celsius-link">°C</a></span> -->
+                  </span>
                 </div>
                 <div class="col-sm-2 icon">
                   <img
@@ -97,20 +114,25 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
           <div class="measurements col-sm-6">
             <i class="fa-solid fa-wind"></i> <strong>Wind:</strong>
-            <span id="wind-speed"></span> <span id="wind-unit">km/h</span> <br />
+            <span id="wind-speed"></span> <span id="wind-unit">km/h</span>
+            <br />
             <i class="fa-solid fa-temperature-half"></i>
             <strong>Humidity:</strong> <span id="humidity"></span>%
           </div>
         </div>
         <div class="weather-forecast" id="forecast"></div>
-        </div>
       </div>
-      <footer>Coded by Lexi Dillon
+      <footer>
+        Coded by Lexi Dillon
         <br />
-     <a href="https://github.com/lexidillon/dillon-weather-app-2022" target="_blank">My GitHut Repository</a>
+        <a
+          href="https://github.com/lexidillon/dillon-weather-app-2022"
+          target="_blank"
+          >My GitHut Repository</a
+        >
       </footer>
     </div>
     <script src="src/app.js"></script>

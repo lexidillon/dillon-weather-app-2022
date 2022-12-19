@@ -3,16 +3,28 @@ a {
 }
 
 body {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/049/476/original/worldmaptransparent.jpg?1666289324);
-  background-size: 100%;
+  background: #749a8e;
+  background: -webkit-linear-gradient(
+      rgba(47, 72, 88, 0.7),
+      rgba(116, 154, 142, 0.5)
+    ),
+    url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/049/476/original/worldmaptransparent.jpg?1666289324");
+  background: linear-gradient(rgba(47, 72, 88, 0.7), rgba(116, 154, 142, 0.5)),
+    url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/049/476/original/worldmaptransparent.jpg?1666289324");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 footer {
   background-color: white;
   opacity: 0.7;
-  margin: 20px;
+  margin: 0 auto;
   width: 180px;
   padding: 10px;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  text-align: center;
 }
 
 h1,
@@ -55,6 +67,22 @@ ul {
 .btn-primary {
   background-color: #749a8e !important;
   border-color: #749a8e;
+}
+
+.btn-primary:hover {
+  background-color: #50797b !important;
+  border-color: #50797b;
+}
+
+.btn-secondary {
+  color: #749a8e;
+  background-color: #ffffff !important;
+  border-color: #749a8e;
+}
+
+.btn-secondary:hover {
+  background-color: #50797b !important;
+  border-color: #50797b;
 }
 
 .current-information {
@@ -111,6 +139,10 @@ ul {
   margin-top: 110px;
 }
 
+span.btnIcon {
+  padding-right: 7px;
+}
+
 .suitcase-icon {
   color: white;
   -webkit-text-stroke: 1.5px black;
@@ -123,4 +155,5 @@ ul {
   max-width: 700px;
   margin-top: 20px;
   margin-bottom: 40px;
+  box-shadow: 0.5rem 1rem 1rem rgba(47, 72, 88, 1) !important;
 }

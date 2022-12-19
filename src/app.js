@@ -156,29 +156,30 @@ function showLocation(position) {
 let currentCity = document.querySelector("#current-city-button");
 currentCity.addEventListener("click", getCurrentWeather);
 
-function displayCelsius(event) {
-  event.preventDefault();
-  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-  let temperature = document.querySelector("#main-temperature");
-  temperature.innerHTML = Math.round(celsiusTemp);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#main-temperature");
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-  temperature.innerHTML = Math.round(fahrenheitTemp);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
 let fahrenheitTemp = null;
 
 searchCity("Virginia Beach");
+
+// I may try to add this back in later, so I'm leaving it for reference :)
+// function displayCelsius(event) {
+//   event.preventDefault();
+//   let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+//   let temperature = document.querySelector("#main-temperature");
+//   temperature.innerHTML = Math.round(celsiusTemp);
+//   celsiusLink.classList.add("active");
+//   fahrenheitLink.classList.remove("active");
+// }
+
+// let celsiusLink = document.querySelector("#celsius-link");
+// celsiusLink.addEventListener("click", displayCelsius);
+
+// function displayFahrenheit(event) {
+//   event.preventDefault();
+//   let temperature = document.querySelector("#main-temperature");
+//   fahrenheitLink.classList.add("active");
+//   celsiusLink.classList.remove("active");
+//   temperature.innerHTML = Math.round(fahrenheitTemp);
+// }
+
+// let fahrenheitLink = document.querySelector("#fahrenheit-link");
+// fahrenheitLink.addEventListener("click", displayFahrenheit);
